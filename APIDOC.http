@@ -1,0 +1,38 @@
+###
+GET http://127.0.0.1:8000/questions/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/questions/
+Content-Type: application/json
+
+{
+    "title": "Python Program to find factorial of a number",
+    "language": "python",
+    "difficulty": "easy",
+    "notes":"This is a sample question based on for loop in python",
+    "topic":"Loops",
+    "sample_input":"4",
+    "is_active": true
+}
+
+###
+GET http://127.0.0.1:8000/questions/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/questions/1/
+Content-Type: application/json
+
+{
+	"title": "Python Program to find factorial of a number",
+    "language": "python",
+    "difficulty": "medium",
+    "notes":"This is a sample question based on for loop in python",
+    "topic":"Loops",
+    "sample_input":"4",
+    "is_active": true
+
+}
+
+
