@@ -9,7 +9,7 @@ Content-Type: application/json
 {
     "title": "Python Program to find factorial of a number",
     "language": "python",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "notes":"This is a sample question based on for loop in python",
     "topic":"Loops",
     "sample_input":"4",
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://127.0.0.1:8000/questions/1/
+GET http://127.0.0.1:8000/questions/3/
 Accept: application/json
 
 ###
@@ -25,11 +25,11 @@ PUT http://127.0.0.1:8000/questions/1/
 Content-Type: application/json
 
 {
-	"title": "Python Program to find factorial of a number",
-    "language": "python",
+	"title": "SQL Program to find factorial of a number",
+    "language": "javascript",
     "difficulty": "medium",
-    "notes":"This is a sample question based on for loop in python",
-    "topic":"Loops",
+    "notes":"This is a sample question based on for sql",
+    "topic":"joins",
     "sample_input":"4",
     "is_active": true
 
@@ -37,4 +37,43 @@ Content-Type: application/json
 
 ###
 DELETE http://127.0.0.1:8000/questions/2/
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+
+#API call for submitting answers
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type:  application/json
+
+{
+    "answer":  "It is a prime number",
+    "question_id":5,
+    "owner": "Rahul"
+}
+
+
+### GET: Retrieve one submission
+GET http://127.0.0.1:8000/submissions/1/
+Accept: application/json
+
+###
+
+### PUT: Update a submission
+PUT http://127.0.0.1:8000/submissions/1/
+Content-Type: application/json
+
+{
+    "answer": "The number is prime",
+    "question_id": 5,
+    "owner": "Rahul"
+}
+
+###
+
+### DELETE: Delete a submission
+DELETE http://127.0.0.1:8000/submissions/1/
+Accept: application/json
 

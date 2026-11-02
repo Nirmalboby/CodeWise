@@ -1,6 +1,13 @@
 from django.db import models
 
 
+"""
+Schema     : Questions
+Fields     : title, language, difficulty_level, notes,
+                topic, published_date, sample_input,  is_active
+
+"""
+
 # Create your models here.
 
 class Questions(models.Model):
@@ -28,4 +35,12 @@ class Questions(models.Model):
     published_date=models.DateTimeField(auto_now_add=True)
     sample_input=models.TextField()
     is_active=models.BooleanField(default=True)
+
+class Submissions(models.Model):
+    answer=models.TextField()
+    question_id=models.IntegerField()
+    points=models.PositiveIntegerField(null=True)
+    owner=models.CharField(max_length=100)
+    submission_date=models.DateTimeField(auto_now_add=True)
+    remarks=models.TextField(null=True)
 
